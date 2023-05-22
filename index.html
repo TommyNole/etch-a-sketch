@@ -6,6 +6,26 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
+<header><h1>Etch-A-Sketch</h1></header>
+<div class="container">
+    <div class="controls-panel">
+        <h2>Controls</h2>
+        <div class = "pixel-slider-section">
+            <output id="slider-value">10</output>
+            <div class = "pixel-slider" id = "pixel-slider"><input type = "range" name = "pixel-count"
+                                                                   id = "pixel-count"
+                                                                   min = "4"
+                                                                   max = "100" value = "10"
+                                                                   oninput="sliderChange(this.value)"
+                                                                    onchange="sliderChange(this.value)">
+                <label for = "pixel-count">Pixel Count</label>
+            </div>
+        </div>
+    </div>
+    <div class="sketch-panel" id="sketch-panel">
+
+    </div>
+</div>
 
 <script src = "script.js"></script>
 </body>

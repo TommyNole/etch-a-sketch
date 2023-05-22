@@ -3,3 +3,66 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    background-color: black;
+}
+
+header{
+    background-color: darkgray;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.container {
+    /* background-color: darkgray; */
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin: 0 2rem;
+    justify-content: center;
+}
+
+.controls-panel {
+    width: 200px;
+    background-color: blue;
+    height: 960px;
+    text-align: center;
+}
+
+.pixel-slider-section {
+    margin-top: 2rem;
+}
+
+.pixel-slider {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 1rem;
+}
+
+.pixel-slider > label {
+    margin-top: .5rem;
+}
+
+.sketch-panel {
+    background-color: white;
+    width: 960px;
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row, .column {
+    border: 1px solid black;
+    display: flex;
+    flex: 1;
+}
+
+
