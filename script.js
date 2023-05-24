@@ -1,12 +1,12 @@
 // Variables
 const sketchPanel = document.querySelector("#sketch-panel");
-const sliderValue = document.getElementById('pixel-count').value;
+let sliderValue = document.getElementById('pixel-count').value;
 const sliderOutputValue = document.querySelector('#slider-value'); 
 let colorValue = document.getElementById('color-picker').value;
 
-console.log(colorValue);
+// console.log(colorValue);
 
-document.querySelector('#slider-value').value = sliderValue;
+
 
 // Create sketch-board grid
 createGrid(sliderValue);
@@ -27,10 +27,12 @@ function createGrid(size) {
   }
 }
 
-// Listener for Pixel Count
+// Pixel Count Slider
+
 document.querySelector('#pixel-count').addEventListener('change', () => {
+  document.querySelector('#slider-value').value = sliderValue;
   changeGrid();
-  sliderOutputValue.textContent = document.querySelector('#pixel-count').value;
+  console.log(sliderValue);
 });
 
 function changeGrid() {
