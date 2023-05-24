@@ -13,9 +13,19 @@
         <div class = "pixel-slider-section">
             <div class = "pixel-slider" id = "pixel-slider">
                 <label for = "pixel-count"><h3>Pixel Count</h3></label>
+                
                 <input type = "range" name = "pixel-count"
-                id = "pixel-count" min = "4" max = "100">
-                <h3>
+                id = "pixel-count" min = "4" max = "100" list="markers">
+                
+                <datalist id="markers">
+                    <option value="4"></option>
+                    <option value="25"></option>
+                    <option value="50"></option>
+                    <option value="75"></option>
+                    <option value="100"></option>
+                  </datalist>
+                
+                  <h3>
                     <output id="slider-value"></output>
                 </h3>
             </div>
@@ -23,14 +33,19 @@
         
         <div class = "color-picker-section">
             <div class = "color-picker-box" id = "color-picker-box">
+                <label for = "color-picker"><h3>Color Picker</h3></label>
                 <input type = "color" name = "color-picker"
                 id = "color-picker" value = "#000000">
-                <label for = "color-picker"><h3>Color Picker</h3></label>
+                
             </div>
         </div>
 
         <div class="button-section">
-            <button id="clear-screen">CLEAR</button>
+            <!-- <button class="buttons" id="instructions">INSTRUCTIONS</button> -->
+            <!-- Add instructions in the future -->
+            <button class="buttons" id="rainbow-btn">RAINBOW</button>
+            <button class="buttons" id="clear-screen">CLEAR</button>
+            <button class="buttons" id="reset-btn">RESET ALL</button>
         </div>
 
     </div>

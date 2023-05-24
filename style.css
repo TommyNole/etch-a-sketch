@@ -52,6 +52,10 @@ body {
     margin-top: .5rem;
 }
 
+.pixel-slider #pixel-count {
+    cursor: pointer;
+}
+
 .color-picker-section {
     margin-top: 2rem;
 }
@@ -59,8 +63,25 @@ body {
 .color-picker-box {
     display: flex;
     flex-direction: column;
-    padding: .5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
 }
+
+.color-picker-box #color-picker {
+    margin-top: .3rem;
+    cursor: pointer;
+}
+
+.buttons {
+    cursor: pointer;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 45%;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
 
 /* Sketch Panel CSS */
 .sketch-panel {
