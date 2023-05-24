@@ -6,35 +6,51 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-<header><h1>Etch-A-Sketch</h1></header>
-<div class="container">
-    <div class="controls-panel">
-        <h2>Controls</h2>
+    <div class="container">
+        <header><h1>Etch-A-Sketch</h1></header>
+        <div class="top-control-panel">
+        <!-- <h2>Controls</h2> -->
         <div class = "pixel-slider-section">
-            <output id="slider-value">10</output>
             <div class = "pixel-slider" id = "pixel-slider">
+                <label for = "pixel-count"><h3>Pixel Count</h3></label>
+                
                 <input type = "range" name = "pixel-count"
-                id = "pixel-count" min = "4" max = "100"
-                oninput="sliderValue.value = pixelCount.value">
-                <label for = "pixel-count">Pixel Count</label>
+                id = "pixel-count" min = "4" max = "100" list="markers">
+                
+                <datalist id="markers">
+                    <option value="4"></option>
+                    <option value="25"></option>
+                    <option value="50"></option>
+                    <option value="75"></option>
+                    <option value="100"></option>
+                  </datalist>
+                
+                  <h3>
+                    <output id="slider-value"></output>
+                </h3>
             </div>
         </div>
         
         <div class = "color-picker-section">
             <div class = "color-picker-box" id = "color-picker-box">
+                <label for = "color-picker"><h3>Color Picker</h3></label>
                 <input type = "color" name = "color-picker"
                 id = "color-picker" value = "#000000">
-                <label for = "color-picker">Color Picker</label>
+                
             </div>
         </div>
-
-        <div class="button-section">
-            <button>CLEAR</button>
-        </div>
-
     </div>
     
     <div class="sketch-panel" id="sketch-panel"></div>
+    <div class="bottom-control-panel">
+        <!-- <button class="buttons" id="instructions">INSTRUCTIONS</button> -->
+        <!-- Add instructions in the future -->
+        <button class="buttons" id="rainbow-btn"><p>RAINBOW</p></button>
+        <button class="buttons" id="clear-screen"><p>CLEAR</p></button>
+        <button class="buttons" id="reset-btn"><p>RESET ALL</p></button>
+    </div>
+    
+
 </div>
 
 <script src = "script.js"></script>

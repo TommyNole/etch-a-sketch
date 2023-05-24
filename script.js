@@ -1,15 +1,13 @@
 // Variables
 const sketchPanel = document.querySelector("#sketch-panel");
-const sliderValue = document.getElementById('pixel-count').value;
-const sliderOutputValue = document.querySelector('#slider-value'); 
-let colorValue = document.getElementById('color-picker').value;
+let sliderValue = document.querySelector("#pixel-count");
+const sliderOutputValue = document.querySelector("#slider-value");
+let colorValue = document.getElementById("color-picker").value;
 
-console.log(colorValue);
-
-document.querySelector('#slider-value').value = sliderValue;
+updateSliderValueDisplay();
 
 // Create sketch-board grid
-createGrid(sliderValue);
+createGrid(sliderValue.value);
 
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
@@ -27,20 +25,66 @@ function createGrid(size) {
   }
 }
 
-// Listener for Pixel Count
-document.querySelector('#pixel-count').addEventListener('change', () => {
+// Pixel Count Slider
+document.querySelector("#pixel-count").addEventListener("input", () => {
+  updateSliderValueDisplay();
   changeGrid();
-  sliderOutputValue.textContent = document.querySelector('#pixel-count').value;
 });
 
+function updateSliderValueDisplay() {
+  sliderOutputValue.textContent = sliderValue.value;
+
+  sliderValue.addEventListener("input", (event) => {
+    sliderOutputValue.innerHTML = event.target.value;
+  });
+}
+
 function changeGrid() {
-  sketchPanel.innerHTML = '';
-  createGrid(document.querySelector('#pixel-count').value);
+  sketchPanel.innerHTML = "";
+  createGrid(document.querySelector("#pixel-count").value);
 }
 
 // Listener for Color Picker
-document.querySelector('#color-picker').addEventListener('change', () => { 
-  colorValue = document.querySelector('#color-picker').value;
+document.querySelector("#color-picker").addEventListener("change", () => {
+  colorValue = document.querySelector("#color-picker").value;
   console.log(colorValue);
+});
 
+// Clear Screen Button
+document.querySelector("#clear-screen").addEventListener("click", () => {
+  changeGrid();
+});
+
+// Generate Random Color
+document.querySelector("#rainbow-btn").addEventListener("click", () => {
+  createRandomColor();
+});
+
+function createRandomColor(size) {
+  sketchPanel.innerHTML = "";
+  randColor(sliderValue.value);
+  function randColor(size) {
+    for (let i = 0; i < size; i++) {
+      const row = document.createElement("div");
+      row.classList.add("row");
+      sketchPanel.appendChild(row);
+      for (let j = 0; j < size; j++) {
+        const column = document.createElement("div");
+        column.classList.add("column");
+        column.addEventListener("mouseover", () => {
+          const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+          column.style.backgroundColor = `#${randomColor}`;
+        });
+        row.appendChild(column);
+      }
+    }
+  }
+}
+
+// Reset All Button
+document.querySelector("#reset-btn").addEventListener("click", () => {
+  document.querySelector("#color-picker").value = "#000000";
+  sketchPanel.innerHTML = "";
+  colorValue = document.getElementById("color-picker").value;
+  createGrid(sliderValue.value);
 });
