@@ -12,11 +12,26 @@
         <h2>Controls</h2>
         <div class = "pixel-slider-section">
             <output id="slider-value">10</output>
-            <div class = "pixel-slider" id = "pixel-slider"><input type = "range" name = "pixel-count"
-            id = "pixel-count" min = "4" max = "100" value = "10">
-            <label for = "pixel-count">Pixel Count</label>
+            <div class = "pixel-slider" id = "pixel-slider">
+                <input type = "range" name = "pixel-count"
+                id = "pixel-count" min = "4" max = "100"
+                oninput="sliderValue.value = pixelCount.value">
+                <label for = "pixel-count">Pixel Count</label>
             </div>
         </div>
+        
+        <div class = "color-picker-section">
+            <div class = "color-picker-box" id = "color-picker-box">
+                <input type = "color" name = "color-picker"
+                id = "color-picker" value = "#000000">
+                <label for = "color-picker">Color Picker</label>
+            </div>
+        </div>
+
+        <div class="button-section">
+            <button>CLEAR</button>
+        </div>
+
     </div>
     
     <div class="sketch-panel" id="sketch-panel"></div>

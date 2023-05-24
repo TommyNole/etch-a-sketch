@@ -30,6 +30,7 @@ body {
     justify-content: center;
 }
 
+/* Control Panel Section */
 .controls-panel {
     width: 200px;
     background-color: blue;
@@ -51,6 +52,17 @@ body {
     margin-top: .5rem;
 }
 
+.color-picker-section {
+    margin-top: 2rem;
+}
+
+.color-picker-box {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 1rem;
+}
+
+/* Sketch Panel CSS */
 .sketch-panel {
     background-color: white;
     width: 960px;
@@ -60,7 +72,7 @@ body {
 }
 
 .row, .column {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex: 1;
 }
