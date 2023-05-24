@@ -6,10 +6,10 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-<header><h1>Etch-A-Sketch</h1></header>
-<div class="container">
-    <div class="controls-panel">
-        <h2>Controls</h2>
+    <div class="container">
+        <header><h1>Etch-A-Sketch</h1></header>
+        <div class="top-control-panel">
+        <!-- <h2>Controls</h2> -->
         <div class = "pixel-slider-section">
             <div class = "pixel-slider" id = "pixel-slider">
                 <label for = "pixel-count"><h3>Pixel Count</h3></label>
@@ -39,18 +39,18 @@
                 
             </div>
         </div>
-
-        <div class="button-section">
-            <!-- <button class="buttons" id="instructions">INSTRUCTIONS</button> -->
-            <!-- Add instructions in the future -->
-            <button class="buttons" id="rainbow-btn">RAINBOW</button>
-            <button class="buttons" id="clear-screen">CLEAR</button>
-            <button class="buttons" id="reset-btn">RESET ALL</button>
-        </div>
-
     </div>
     
     <div class="sketch-panel" id="sketch-panel"></div>
+    <div class="bottom-control-panel">
+        <!-- <button class="buttons" id="instructions">INSTRUCTIONS</button> -->
+        <!-- Add instructions in the future -->
+        <button class="buttons" id="rainbow-btn"><p>RAINBOW</p></button>
+        <button class="buttons" id="clear-screen"><p>CLEAR</p></button>
+        <button class="buttons" id="reset-btn"><p>RESET ALL</p></button>
+    </div>
+    
+
 </div>
 
 <script src = "script.js"></script>

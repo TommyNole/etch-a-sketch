@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,73 +7,94 @@
 }
 html {
     background-color: black;
+    font-family: 'Indie Flower', cursive;
 }
 
 header{
-    background-color: darkgray;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
+    background-color: lightcoral;
+    text-align: center;
+    padding: 20px 20px 0;
+}
+
+h1 {
+    filter: drop-shadow(1px 1px 1px #000);
+}
+
+h3 {
+    filter: drop-shadow(.5px .5px 1px #000);
 }
 
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 .container {
-    /* background-color: darkgray; */
-    display: flex;
-    flex-direction: row;
-    flex: 1;
     margin: 0 2rem;
-    justify-content: center;
 }
 
-/* Control Panel Section */
-.controls-panel {
-    width: 200px;
-    background-color: blue;
-    height: 960px;
+/* Top Control Panel Section */
+.top-control-panel {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lightcoral;
     text-align: center;
-}
-
-.pixel-slider-section {
-    margin-top: 2rem;
 }
 
 .pixel-slider {
     display: flex;
-    flex-direction: column;
     padding: .5rem 1rem;
-}
-
-.pixel-slider > label {
-    margin-top: .5rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .pixel-slider #pixel-count {
     cursor: pointer;
-}
-
-.color-picker-section {
-    margin-top: 2rem;
+    color: black;
+    filter: drop-shadow(1px 1px 2px #000);
 }
 
 .color-picker-box {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 1rem;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    margin-bottom: .25rem;
 }
 
 .color-picker-box #color-picker {
     margin-top: .3rem;
     cursor: pointer;
+    filter: drop-shadow(1px 1px 2px #000);
 }
+
+
+/* Sketch Panel CSS */
+.sketch-panel {
+    background-color: white;
+    width: 650px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row, .column {
+    display: flex;
+    flex: 1;
+}
+
+/* Bottom Control Panel Section */
+.bottom-control-panel {
+    background-color: lightcoral;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
 
 .buttons {
     cursor: pointer;
@@ -80,22 +103,29 @@ body {
     border-radius: 45%;
     font-size: 1rem;
     font-weight: bolder;
+    border: none;
+    background-color: #0075FF;
+    filter: drop-shadow(2px 2px 4px #000);
+    font-family: 'Indie Flower', cursive;
 }
 
-
-/* Sketch Panel CSS */
-.sketch-panel {
-    background-color: white;
-    width: 960px;
-    height: 960px;
-    display: flex;
-    flex-direction: column;
+.buttons > p {
+    filter: drop-shadow(.25px .25px 1px #000);
 }
 
-.row, .column {
-    /* border: 1px solid black; */
-    display: flex;
-    flex: 1;
+.buttons:hover {
+    background-color: navy;
+    color: lightcoral;
 }
+
+.buttons:active {
+    background-color: navy;
+    box-shadow: 0 2px #0077ff82;
+    transform: translateY(4px) translateX(4px);
+  }
+
+
+
+
 
 
