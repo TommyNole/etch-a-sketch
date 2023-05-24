@@ -1,15 +1,14 @@
 // Variables
 const sketchPanel = document.querySelector("#sketch-panel");
-let sliderValue = document.getElementById('pixel-count').value;
+let sliderValue = document.querySelector("#pixel-count");
 const sliderOutputValue = document.querySelector('#slider-value'); 
 let colorValue = document.getElementById('color-picker').value;
 
-// console.log(colorValue);
-
+updateSliderValueDisplay();
 
 
 // Create sketch-board grid
-createGrid(sliderValue);
+createGrid(sliderValue.value);
 
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
@@ -28,12 +27,19 @@ function createGrid(size) {
 }
 
 // Pixel Count Slider
-
-document.querySelector('#pixel-count').addEventListener('change', () => {
-  document.querySelector('#slider-value').value = sliderValue;
+document.querySelector('#pixel-count').addEventListener('input', () => {
+  updateSliderValueDisplay();
   changeGrid();
-  console.log(sliderValue);
 });
+
+function updateSliderValueDisplay() { 
+  sliderOutputValue.textContent = sliderValue.value;
+  
+  sliderValue.addEventListener("input", (event) => {
+    sliderOutputValue.innerHTML = event.target.value
+  });
+
+};
 
 function changeGrid() {
   sketchPanel.innerHTML = '';
@@ -44,5 +50,9 @@ function changeGrid() {
 document.querySelector('#color-picker').addEventListener('change', () => { 
   colorValue = document.querySelector('#color-picker').value;
   console.log(colorValue);
-
 });
+
+// Clear Screen Button
+// document.querySelector("#clear-screen").addEventListener("click", () => {
+//   changeGrid();
+// });
